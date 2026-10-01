@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.clawhub/
+.clawdhub/
+reports/
+audit.json
+run.json
+evaluation.json
+*.log

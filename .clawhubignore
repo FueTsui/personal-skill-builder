@@ -1,0 +1,10 @@
+.git/
+__pycache__/
+*.pyc
+.env
+.env.*
+reports/
+audit.json
+run.json
+evaluation.json
+*.log
