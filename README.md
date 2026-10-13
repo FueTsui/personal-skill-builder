@@ -5,8 +5,6 @@
 **版本：1.0.1 · 作者：FueTsui · 许可：[MIT](LICENSE)**
 **发行类型：公开版。** 文档整理日期：2026-10-13。[下载 v1.0.1](https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1)。
 
-1.0.1 以受测 RC7 为来源，本次仅更新发行版本和发布文档，没有新增行为修复或模型测试。RC7 的完整稳定性验收未通过，输出限制遗漏和验证记录不准确的问题仍保留在本版。详细情况见[实测结果](docs/TEST-RESULTS.md)和[已知问题](docs/KNOWN-ISSUES.md)。
-
 ## 它能帮你做什么
 
 描述一件想让 AI 反复完成的工作，提供已有材料或好坏样例。工坊会逐次补问关键缺口，吸收你主动补充的要求，整理输入、步骤、输出和完成标准，生成 `SKILL.md` 及必要资源。以后可以使用生成的业务技能完成重复工作，也可以继续通过工坊调整规则。
@@ -40,7 +38,7 @@ npx skills add https://github.com/FueTsui/personal-skill-builder --skill persona
 | code-generator 下游任务 | 6 次最终业务交付通过，过程中有自检或初稿修正 |
 | 代码回归 | 73 项通过；这是工具检查结果，不是模型可靠率 |
 
-测试材料为合成数据。上述结论来自 2026-10-13 的既有 RC7 测试，不是 1.0.1 的新增模型实测。换模型、换材料或换宿主后，仍需验证自己的任务。
+以上为 2026-10-13 历史合成材料实测结果，具体范围见[实测报告](docs/TEST-RESULTS.md)。换模型、换材料或换宿主后，仍需验证自己的任务。
 
 ## 包内导航
 
@@ -53,9 +51,7 @@ npx skills add https://github.com/FueTsui/personal-skill-builder --skill persona
 - [版本来源](RELEASE-METADATA.json)与[文件校验清单](MANIFEST.sha256)：核对受测版本和交付文件。
 - [技能入口](SKILL.md)：位于仓库及解压后技能目录的根目录。
 
-## 文件与版本说明
-
-发行版本由 `1.0.1-rc.7` 调整为 `1.0.1`，版本信息和公开文档同步更新；技能行为规则、脚本、模板及调用策略沿用 RC7。历史测试名称和问题编号保持原样，以便追溯，版本号变化不表示已知问题得到修复。
+## 文件说明
 
 只提供一个 `personal-skill-builder-1.0.1.zip`：解压后得到 `personal-skill-builder/`，其中包含技能入口、资源、文档和脱敏实测摘要。仓库中的 `SKILL.md` 直接位于根目录。安装方法见[安装说明](docs/INSTALL.md)。
 
