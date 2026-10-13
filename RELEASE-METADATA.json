@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "product": "personal-skill-builder",
+  "display_name": "个人技能工坊",
+  "version": "1.0.1",
+  "author": "FueTsui",
+  "license": "MIT",
+  "release_channel": "public-test",
+  "publication_status": "release_artifact",
+  "packaging_revision": 1,
+  "prepared_date": "2026-10-13",
+  "date_timezone": "Asia/Shanghai",
+  "candidate_status": "public_test_candidate_with_known_failures",
+  "stable_acceptance_passed": false,
+  "skill_directory": ".",
+  "frozen_skill_file_count": 21,
+  "frozen_aggregate_sha256": "cb4121fce49fa390ca8f9fcc813939dd7e1c7b06abf061f520cc467ba59c3030",
+  "aggregate_algorithm": "Ordinal-sorted relative POSIX path + TAB + lowercase file SHA256 + LF, including trailing LF",
+  "candidate_archive_sha256": "e8365cb8648fcd452415e32e7e5669adabcb8ec16902bfefc88cb4ab144b4da7",
+  "skill_files_modified": true,
+  "new_model_runs_for_packaging": 0,
+  "local_checks_scope": "Release file integrity, unchanged RC7 behavior resources, structure, JSON parsing, relative links, archive contents and isolated installer checks. Model behavior evidence remains historical RC7.",
+  "raw_evidence_in_public_bundle": false,
+  "source_reports": [
+    {
+      "logical_path": "delivery/FINAL-REPORT.md",
+      "sha256": "5379f4f1c15904bf533b78e5b5bed8ee306f77f04e5f33634970f8371875e521",
+      "included_in_public_bundle": false
+    },
+    {
+      "logical_path": "review/rc7-reviewer-final-summary.md",
+      "sha256": "8213321841b0e9a3cc9d07853105c7f366daa72f48ca18a6ef7adef472c108ff",
+      "included_in_public_bundle": false
+    },
+    {
+      "logical_path": "review/builder-rc7-full.md",
+      "sha256": "b136b61fc3ae9e6eebdac53db6cb57ed5a1e3c7c2b56f1004ecdfacea3c03d31",
+      "included_in_public_bundle": false
+    },
+    {
+      "logical_path": "review/runner-rc7-full.md",
+      "sha256": "9d5bccf78c8b2b0a756884d55378a27dd4c170aa8b6050b433f8a8462c61fb11",
+      "included_in_public_bundle": false
+    },
+    {
+      "logical_path": "review/codegen-rc7-builder-full.md",
+      "sha256": "9d723ff0f20154d1b29adee34bf91fd53141e9807d06e3b0def83296c767fd9c",
+      "included_in_public_bundle": false
+    },
+    {
+      "logical_path": "review/codegen-rc7-runner-full.md",
+      "sha256": "5c8e85db9c68cb7640e5d1d8eb71332c3f6d0fc72c4c59873c07b245ca0b233e",
+      "included_in_public_bundle": false
+    }
+  ],
+  "manifest": "MANIFEST.sha256",
+  "manifest_excludes": [
+    "MANIFEST.sha256"
+  ],
+  "documentation_language": "zh-CN",
+  "scope_note": "1.0.1 is the public-test release derived from RC7. Only version metadata and publication documentation changed. Known behavior failures remain unresolved.",
+  "tested_version": "1.0.1-rc.7",
+  "release_url": "https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1",
+  "core_files_changed_from_frozen": [
+    "VERSION",
+    "SKILL.md",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "behavior_changes_from_tested_version": false,
+  "public_archive": "personal-skill-builder-1.0.1.zip"
+}

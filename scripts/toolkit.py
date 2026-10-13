@@ -508,7 +508,13 @@ def validate_suite(data: Any) -> dict[str, Any]:
     return data
 
 def relative_reference(target: Path, output: Path) -> str:
-    return Path(os.path.relpath(target.resolve(), output.parent.resolve())).as_posix()
+    target_abs = target.resolve()
+    output_parent = output.parent.resolve()
+    # Windows cannot express a relative path between different drives or shares.
+    # Keep an absolute reference there; same-volume plans remain relocatable.
+    if target_abs.anchor.casefold() != output_parent.anchor.casefold():
+        return target_abs.as_posix()
+    return Path(os.path.relpath(target_abs, output_parent)).as_posix()
 
 
 def suite_dimensions(suite: dict[str, Any]) -> list[dict[str, Any]]:
@@ -774,6 +780,7 @@ def evaluate_run(run_file: Path) -> dict[str, Any]:
                 if record["response_sha256"] != sha256_file(response_path):
                     raise ToolkitError(f"{key} response_sha256 与响应文件不一致")
                 paths_for_record = {response_path}
+                turn_path_owners: dict[Path, int] = {}
                 turn_responses: list[str] = []
                 for evidence in sorted(record["turn_evidence"], key=lambda item: item["turn"]):
                     if evidence.get("status") != "executed":
@@ -783,6 +790,13 @@ def evaluate_run(run_file: Path) -> dict[str, Any]:
                         evidence.get("response_path"),
                         f"{key} turn {evidence.get('turn')} response_path",
                     )
+                    prior_turn = turn_path_owners.get(turn_path)
+                    if prior_turn is not None:
+                        raise ToolkitError(
+                            f"{key} 第 {prior_turn} 轮与第 {evidence.get('turn')} 轮"
+                            f"复用了同一响应证据文件：{shown(turn_path, run_file.parent)}"
+                        )
+                    turn_path_owners[turn_path] = evidence["turn"]
                     turn_response = read_text(turn_path)
                     if not turn_response.strip():
                         raise ToolkitError(f"逐轮响应文件为空或仅含空白：{turn_path}")
