@@ -7,7 +7,7 @@
   "license": "MIT",
   "release_channel": "public",
   "publication_status": "release_artifact",
-  "packaging_revision": 3,
+  "packaging_revision": 4,
   "prepared_date": "2026-10-13",
   "date_timezone": "Asia/Shanghai",
   "stable_acceptance_passed": false,
@@ -57,7 +57,7 @@
     "MANIFEST.sha256"
   ],
   "documentation_language": "zh-CN",
-  "scope_note": "Public-release documentation cleanup. Detailed experiment results and known issues remain in their dedicated documents; skill behavior and evidence records are unchanged.",
+  "scope_note": "README focuses on features, installation and usage, with links to detailed test results and known issues. The former homepage result summary is preserved in the dedicated test report. Skill behavior and evidence records are unchanged.",
   "tested_version": "1.0.1-rc.7",
   "release_url": "https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1",
   "core_files_changed_from_frozen": [
