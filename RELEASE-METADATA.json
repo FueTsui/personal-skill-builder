@@ -7,8 +7,8 @@
   "license": "MIT",
   "release_channel": "public",
   "publication_status": "release_artifact",
-  "packaging_revision": 4,
-  "prepared_date": "2026-10-13",
+  "packaging_revision": 5,
+  "prepared_date": "2026-10-14",
   "date_timezone": "Asia/Shanghai",
   "stable_acceptance_passed": false,
   "skill_directory": ".",
@@ -18,29 +18,9 @@
   "candidate_archive_sha256": "e8365cb8648fcd452415e32e7e5669adabcb8ec16902bfefc88cb4ab144b4da7",
   "skill_files_modified": true,
   "new_model_runs_for_packaging": 0,
-  "local_checks_scope": "Documentation consistency, JSON parsing, relative links, manifest and ZIP verification. The retained global installation command was exercised on 2026-10-13 before this documentation revision. No model behavior reruns.",
+  "local_checks_scope": "Documentation, JSON, links, SHA-256 manifest and ZIP verification. No new model behavior runs.",
   "raw_evidence_in_public_bundle": false,
   "source_reports": [
-    {
-      "logical_path": "delivery/FINAL-REPORT.md",
-      "sha256": "5379f4f1c15904bf533b78e5b5bed8ee306f77f04e5f33634970f8371875e521",
-      "included_in_public_bundle": false
-    },
-    {
-      "logical_path": "review/rc7-reviewer-final-summary.md",
-      "sha256": "8213321841b0e9a3cc9d07853105c7f366daa72f48ca18a6ef7adef472c108ff",
-      "included_in_public_bundle": false
-    },
-    {
-      "logical_path": "review/builder-rc7-full.md",
-      "sha256": "b136b61fc3ae9e6eebdac53db6cb57ed5a1e3c7c2b56f1004ecdfacea3c03d31",
-      "included_in_public_bundle": false
-    },
-    {
-      "logical_path": "review/runner-rc7-full.md",
-      "sha256": "9d5bccf78c8b2b0a756884d55378a27dd4c170aa8b6050b433f8a8462c61fb11",
-      "included_in_public_bundle": false
-    },
     {
       "logical_path": "review/codegen-rc7-builder-full.md",
       "sha256": "9d723ff0f20154d1b29adee34bf91fd53141e9807d06e3b0def83296c767fd9c",
@@ -57,7 +37,7 @@
     "MANIFEST.sha256"
   ],
   "documentation_language": "zh-CN",
-  "scope_note": "README focuses on features, installation and usage, with links to detailed test results and known issues. The former homepage result summary is preserved in the dedicated test report. Skill behavior and evidence records are unchanged.",
+  "scope_note": "Public documentation summarizes retained code-generator evidence only. Core skill behavior is unchanged; this documentation revision adds no model runs.",
   "tested_version": "1.0.1-rc.7",
   "release_url": "https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1",
   "core_files_changed_from_frozen": [

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "product": "personal-skill-builder",
   "version": "1.0.1-rc.7",
-  "summary_date": "2026-10-13",
+  "summary_date": "2026-10-14",
   "status": "public_test_candidate_with_known_failures",
   "stable_acceptance_passed": false,
   "summary_basis": "existing_execution_evidence_and_independent_reviews",
@@ -13,13 +13,13 @@
   "capability_observations": [
     {
       "capability": "one_question_at_a_time",
-      "status": "observed_pass_in_both_builder_sequences",
+      "status": "observed_pass_in_code_generator_builder_sequence",
       "scope": "Four-turn sequences; first two turns asked about input format and cutoff date without re-requesting known information."
     },
     {
       "capability": "absorb_proactive_supplements",
-      "status": "observed_pass_in_both_builder_sequences",
-      "scope": "Observed business requirements were incorporated; Doubao provenance fields were not an exact question-and-answer transcript."
+      "status": "observed_pass_in_code_generator_builder_sequence",
+      "scope": "Observed business requirements were incorporated in the retained code-generator sequence."
     },
     {
       "capability": "multi_turn_generation_and_revision",
@@ -28,65 +28,6 @@
     }
   ],
   "environments": [
-    {
-      "id": "doubao_chat",
-      "channel": "visible_chat_ui",
-      "visible_setting": "自动 高",
-      "backend_model_independently_verified": false,
-      "native_business_file_creation_observed": false,
-      "builder": {
-        "turns": 4,
-        "status": "fail",
-        "finding_ids": [
-          "D7-BF01",
-          "D7-BF02"
-        ]
-      },
-      "downstream": {
-        "evaluation_target": "final_visible_business_deliverables",
-        "main_batches_in_same_session": 5,
-        "fresh_context_normal_repeats": 1,
-        "total": 6,
-        "pass": 5,
-        "fail": 1,
-        "cases": [
-          {
-            "id": "normal",
-            "status": "pass"
-          },
-          {
-            "id": "conflict",
-            "status": "pass"
-          },
-          {
-            "id": "next-week",
-            "status": "pass"
-          },
-          {
-            "id": "ordering",
-            "status": "fail",
-            "finding_ids": [
-              "D7-RF01"
-            ],
-            "sorting_observed_correct": true
-          },
-          {
-            "id": "privacy",
-            "status": "pass"
-          },
-          {
-            "id": "fresh-normal-repeat",
-            "status": "pass"
-          }
-        ]
-      },
-      "normal_repeat": {
-        "complete_prompt_bytes_identical": true,
-        "business_facts_consistent": true,
-        "formatting_identical": false,
-        "scope": "One normal case only."
-      }
-    },
     {
       "id": "code_generator_file_environment",
       "channel": "file_tools",
@@ -161,13 +102,6 @@
       }
     }
   ],
-  "combined_downstream_counts": {
-    "total": 12,
-    "final_pass": 11,
-    "final_fail": 1,
-    "statistical_reliability_rate": null,
-    "independent_model_samples": false
-  },
   "code_checks": {
     "total": 73,
     "pass": 73,
@@ -209,27 +143,6 @@
   },
   "confirmed_findings": [
     {
-      "id": "D7-BF01",
-      "status": "unresolved",
-      "scope": "doubao_builder",
-      "summary": "Visible internal-check text and a new example exposed restricted monetary values.",
-      "source": "builder-rc7-full.md"
-    },
-    {
-      "id": "D7-BF02",
-      "status": "unresolved",
-      "scope": "doubao_builder",
-      "summary": "Self-reported successful monetary hiding contradicted the visible delivery.",
-      "source": "builder-rc7-full.md"
-    },
-    {
-      "id": "D7-RF01",
-      "status": "unresolved",
-      "scope": "doubao_ordering",
-      "summary": "A note exposed a restricted monetary value despite correct sorting and a claim that values were hidden.",
-      "source": "runner-rc7-full.md"
-    },
-    {
       "id": "C7-BF01",
       "status": "unresolved",
       "scope": "code_generator_builder",
@@ -241,7 +154,6 @@
     "Finite registered examples, not reliability estimates.",
     "No no-skill baseline or causal improvement estimate.",
     "Main batches were sequential within each execution session, not independent model samples.",
-    "Different host capabilities and output channels prevent a fully controlled model comparison.",
     "Author walkthroughs, script self-checks, code checks, and independent semantic reviews are separate evidence types.",
     "Final passes do not overwrite original failures or pre-correction artifacts.",
     "Only normal was repeated in a fresh context.",
@@ -253,16 +165,20 @@
   "evidence_distribution": {
     "public_bundle_contains": "sanitized_summaries_only",
     "raw_evidence_included": false,
-    "raw_evidence_retention": "retained_separately_by_maintainer",
+    "raw_evidence_retention": "retained_code_generator_evidence_only",
     "logical_source_files": [
-      "FINAL-REPORT.md",
-      "rc7-reviewer-final-summary.md",
-      "builder-rc7-full.md",
-      "runner-rc7-full.md",
       "codegen-rc7-builder-full.md",
       "codegen-rc7-runner-full.md"
     ]
   },
   "release_version": "1.0.1",
-  "release_mapping": "Version metadata and publication documentation changed from the tested 1.0.1-rc.7. Behavior instructions, scripts, templates and configuration are unchanged. No new model behavior runs."
+  "release_mapping": "Version metadata and publication documentation changed from the tested 1.0.1-rc.7. Behavior instructions, scripts, templates and configuration are unchanged. No new model behavior runs.",
+  "retained_downstream_counts": {
+    "total": 6,
+    "final_pass": 6,
+    "final_fail": 0,
+    "statistical_reliability_rate": null,
+    "independent_model_samples": false
+  },
+  "summary_scope": "Retained code-generator evidence and code checks only; excluded records are not counted as passing or failing."
 }
