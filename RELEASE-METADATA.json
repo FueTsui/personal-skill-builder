@@ -1,55 +1,35 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "product": "personal-skill-builder",
-  "display_name": "个人技能工坊",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "release_channel": "stable",
+  "publication_status": "release_artifact",
+  "release_date": "2026-10-15",
+  "release_timezone": "Asia/Shanghai",
   "author": "FueTsui",
   "license": "MIT",
-  "release_channel": "public",
-  "publication_status": "release_artifact",
-  "packaging_revision": 5,
-  "prepared_date": "2026-10-14",
-  "date_timezone": "Asia/Shanghai",
+  "release_url": "https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.2",
+  "public_archive": "personal-skill-builder-1.0.2.zip",
+  "archive_root": "personal-skill-builder/",
+  "packaging_revision": 1,
+  "promoted_from": "1.0.2-dev.10",
+  "source_archive": "personal-skill-builder-1_0_2-dev_10.zip",
+  "source_archive_sha256": "f66f44efbb9015c111b9f9269fb423058b1d83f11133b28efc26b1dc46e7298a",
+  "previous_public_version": "1.0.1",
+  "previous_public_commit": "24d815d8750ca3da98b97ac42d61ba07340afb5b",
+  "development_base_version": "1.0.1",
+  "development_base_commit": "b7995b29dd17270dc14c2faf7002ae8d5a9b2b2c",
+  "behavior_changes_from_promoted_version": false,
   "stable_acceptance_passed": false,
-  "skill_directory": ".",
-  "frozen_skill_file_count": 21,
-  "frozen_aggregate_sha256": "cb4121fce49fa390ca8f9fcc813939dd7e1c7b06abf061f520cc467ba59c3030",
-  "aggregate_algorithm": "Ordinal-sorted relative POSIX path + TAB + lowercase file SHA256 + LF, including trailing LF",
-  "candidate_archive_sha256": "e8365cb8648fcd452415e32e7e5669adabcb8ec16902bfefc88cb4ab144b4da7",
-  "skill_files_modified": true,
-  "new_model_runs_for_packaging": 0,
-  "local_checks_scope": "Documentation, JSON, links, SHA-256 manifest and ZIP verification. No new model behavior runs.",
-  "raw_evidence_in_public_bundle": false,
-  "source_reports": [
-    {
-      "logical_path": "review/codegen-rc7-builder-full.md",
-      "sha256": "9d723ff0f20154d1b29adee34bf91fd53141e9807d06e3b0def83296c767fd9c",
-      "included_in_public_bundle": false
-    },
-    {
-      "logical_path": "review/codegen-rc7-runner-full.md",
-      "sha256": "5c8e85db9c68cb7640e5d1d8eb71332c3f6d0fc72c4c59873c07b245ca0b233e",
-      "included_in_public_bundle": false
-    }
-  ],
-  "manifest": "MANIFEST.sha256",
-  "manifest_excludes": [
-    "MANIFEST.sha256"
-  ],
-  "documentation_language": "zh-CN",
-  "scope_note": "Public documentation summarizes retained code-generator evidence only. Core skill behavior is unchanged; this documentation revision adds no model runs.",
-  "tested_version": "1.0.1-rc.7",
-  "release_url": "https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1",
-  "core_files_changed_from_frozen": [
-    "VERSION",
-    "SKILL.md",
-    "README.md",
-    "CHANGELOG.md"
-  ],
-  "behavior_changes_from_tested_version": false,
-  "public_archive": "personal-skill-builder-1.0.1.zip",
-  "release_status": "public_with_known_issues",
-  "tested_candidate_status": "public_test_candidate_with_known_failures",
-  "default_windows_install_path": "C:\\Users\\<username>\\.agents\\skills\\personal-skill-builder",
-  "installation_command": "npx skills add https://github.com/FueTsui/personal-skill-builder --skill personal-skill-builder --agent codex --global"
+  "model_tests": "quick_regression_passed_with_known_generated_program_failure_and_coverage_gap",
+  "new_model_runs_for_release_packaging": 0,
+  "evidence": "evidence/RESULTS.json",
+  "known_issues": "docs/KNOWN-ISSUES.md",
+  "scope_note": "Stable is the distribution channel. Promotion changes version metadata and publication documentation only; it does not fix generated programs or establish full behavioral acceptance. Historical evidence retains its original tested versions.",
+  "documentation_identity": {
+    "scope": "current_release_summary_and_explicit_historical_evidence",
+    "updated_on": "2026-10-15",
+    "core_behavior_resources_changed": false,
+    "original_whole_package_bytes_claimed_unchanged": false
+  }
 }

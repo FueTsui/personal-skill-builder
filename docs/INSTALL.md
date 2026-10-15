@@ -1,6 +1,6 @@
 # 安装与使用
 
-适用版本：**1.0.1 公开版**。
+适用版本：**1.0.2 正式版**。
 
 ## 安装前准备
 
@@ -14,15 +14,15 @@
 npx skills add https://github.com/FueTsui/personal-skill-builder --skill personal-skill-builder --agent codex --global
 ```
 
-命令通过 [Skills CLI](https://github.com/vercel-labs/skills#install-a-skill)安装仓库当前版本。这个全局安装方式的目标为 `~/.agents/skills`，其中 `~` 表示当前用户目录。Windows 下的完整技能位置为：
+命令通过 [Skills CLI](https://github.com/vercel-labs/skills#install-a-skill)安装仓库当前版本。这个全局安装方式的目标为 `~/.agents/skills`，其中 `~` 表示当前用户目录。技能位置为：
 
 ```text
-C:\Users\用户名\.agents\skills\personal-skill-builder
+~/.agents/skills/personal-skill-builder
 ```
 
-无需在命令中手动填写用户名。`--global` 指定用户级安装，`--agent codex` 对应的全局位置就是上述通用目录。
+无需在命令中手动填写用户名。`--global` 指定用户级安装，`--agent codex` 对应的全局位置就是上述通用目录。此命令读取仓库当前版本；需要固定本次发行内容时，使用下方 `v1.0.2` 发布页的 ZIP，并核对随附校验值。
 
-安装完成后，该文件夹中应直接包含 `SKILL.md`、`VERSION`、`references`、`assets`、`scripts` 和 `docs` 等文件与目录。打开 `VERSION`，确认内容为 `1.0.1`。
+安装完成后，该文件夹中应直接包含 `SKILL.md`、`VERSION`、`references`、`assets`、`scripts` 和 `docs` 等文件与目录。打开 `VERSION`，确认内容为 `1.0.2`。
 
 ## 开始使用
 
@@ -58,6 +58,8 @@ C:\Users\用户名\.agents\skills\personal-skill-builder
 
 每批提供本次材料和必要参数。需要改变工作规则时，再使用工坊升级业务技能。
 
+执行生成的处理程序前，备份输入，并把输入目录与输出目录分开；不要让输出文件与输入文件同名同路径。当前版本的一个 Terra 生成样本在这种情况下会覆盖源 CSV，详见[已知问题](KNOWN-ISSUES.md#dev10-p1terra-生成程序可能覆盖输入-csv)。
+
 ## 更新与恢复
 
 更新前，将已有的 `personal-skill-builder` 文件夹完整备份到 `.agents\skill-backups` 等技能搜索目录之外，然后重新运行上面的全局安装命令。若曾在其他工具的技能目录安装同名版本，核对并移出旧副本，避免加载到不同版本。
@@ -66,6 +68,6 @@ C:\Users\用户名\.agents\skills\personal-skill-builder
 
 ## 下载与更多说明
 
-[v1.0.1 发布页](https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.1)提供 `personal-skill-builder-1.0.1.zip` 和 `SHA256SUMS.txt`。ZIP 包含完整技能、功能介绍和使用说明，解压后为 `personal-skill-builder/`。
+[v1.0.2 发布页](https://github.com/FueTsui/personal-skill-builder/releases/tag/v1.0.2)提供 `personal-skill-builder-1.0.2.zip` 和 `SHA256SUMS.txt`。ZIP 包含完整技能、功能介绍和使用说明，解压后为 `personal-skill-builder/`。
 
 功能说明见[功能介绍](FEATURES.md)，当前限制与反馈方法见[已知问题](KNOWN-ISSUES.md)。
